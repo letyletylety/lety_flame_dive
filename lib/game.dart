@@ -1,11 +1,29 @@
 import 'dart:ui';
 
 import 'package:flame/game.dart';
+import 'package:flutter/material.dart' show Colors;
 
 class MyGame extends Game {
-  @override
-  void render(Canvas canvas) {}
+  late Vector2 cir;
 
   @override
-  void update(double dt) {}
+  void onGameResize(Vector2 size) {
+    super.onGameResize(size);
+
+    cir = size / 2;
+  }
+
+  @override
+  void render(Canvas canvas) {
+    canvas.drawCircle(Offset(cir.x, cir.y), 20, Paint()..color = Colors.white);
+  }
+
+  @override
+  void update(double dt) {
+    cir.x += dt * 80;
+    
+    if (cir.x > canvasSize.x + 20) {
+      cir.x = 0;
+    }
+  }
 }

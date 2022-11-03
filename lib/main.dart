@@ -15,7 +15,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late Game _game;
+  late MyGame _game;
 
   @override
   void initState() {
