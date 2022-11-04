@@ -21,7 +21,7 @@ class MyGame extends Game {
   @override
   void update(double dt) {
     cir.x += dt * 80;
-    
+
     if (cir.x > canvasSize.x + 20) {
       cir.x = 0;
     }
